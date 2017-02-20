@@ -144,7 +144,7 @@ public interface Wrappers {
 	 * This method will move the control to the last window
 	 * @author Winston
 	 */
-	public void switchToLastWindow();
+	public void switchToLastWindow(String windowTitle);
 
 
 	/**

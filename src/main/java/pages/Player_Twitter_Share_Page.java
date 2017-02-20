@@ -21,7 +21,14 @@ public class Player_Twitter_Share_Page extends ESPNWrappers {
 		}
 
 	}
-
+	
+	//to enter new input on the textarea
+	public Player_Twitter_Share_Page enterInput(String input)
+	{
+		enterById("status", input);
+		return this;
+	}
+	
 	//to enter username
 	public Player_Twitter_Share_Page enterUserName()
 	{
@@ -40,7 +47,7 @@ public class Player_Twitter_Share_Page extends ESPNWrappers {
 	public Your_Tweet_Has_Been_Posted_Page clickTweetbutton() throws InterruptedException
 	{
 		clickByXpath("(//fieldset[@class='submit']//input)[2]");
-		switchToLastWindow();
+		switchToLastWindow("Your Tweet has been posted!");
 		return new Your_Tweet_Has_Been_Posted_Page(driver,test) ;
 	}
 

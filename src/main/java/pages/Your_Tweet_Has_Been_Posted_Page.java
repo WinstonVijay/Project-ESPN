@@ -1,5 +1,7 @@
 package pages;
 
+//Page-Created by Gopinath
+
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -23,10 +25,8 @@ public class Your_Tweet_Has_Been_Posted_Page extends ESPNWrappers
 	//Close the Your_Tweet_Has_Been_Posted_Page
 	public Player_Home_Page clickClose() throws InterruptedException
 	{
-		clickById("btn-close");
-		switchToParentWindow();
+		clickByIdNoSnap("btn-close");
+		switchToLastWindow("Christian Fuchs Player Profile - ESPN FC");
 		return new Player_Home_Page(driver, test);
 	}
-
 }
-

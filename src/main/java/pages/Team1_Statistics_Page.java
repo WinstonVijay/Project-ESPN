@@ -43,10 +43,10 @@ public class Team1_Statistics_Page extends ESPNWrappers{
 	//to click the Top Assists link
 	public Team1_Statistics_Page clickTopAssistsLink()
 	{
-		clickByLink("Top Assists");
+		clickByXpath("//div[@class='toggle']//li[3]");
 		return this;
 	}
-	
+
 	//to fetch Player1 from the list of Top Assists
 	public Team1_Statistics_Page getTopAssistsPlayer1(int i)
 	{
@@ -66,6 +66,13 @@ public class Team1_Statistics_Page extends ESPNWrappers{
 	{
 		fetchInput("(//td[@headers='player']/a)[3]", i);
 		return this;
+	}
+
+	//Switch to the Parent Window-Team1_Home_Page
+	public Team1_Home_Page switchToTeamHomePage() throws InterruptedException
+	{
+		switchToParentWindow();
+		return new Team1_Home_Page(driver, test);
 	}
 
 }

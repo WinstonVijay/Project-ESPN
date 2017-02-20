@@ -8,7 +8,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 import wrappers.ESPNWrappers;
 
-public class Player_Facebook_Share_Page1 extends ESPNWrappers {
+public class Player_Facebook_Share_Page1 extends ESPNWrappers 
+{
 	public Player_Facebook_Share_Page1(RemoteWebDriver driver,ExtentTest test) throws InterruptedException
 	{
 		this.driver=driver;

@@ -36,10 +36,11 @@ public class Facebook_Login_SignUp_Page extends ESPNWrappers {
 	}
 	
 	//click the 'Log In' button
-	public Login_with_Facebook_Page facebook_LoginButton() throws InterruptedException
+	public Home_Page_and_Login_Page facebook_LoginButton() throws InterruptedException
 	{
 		clickByName("login");
-		return new Login_with_Facebook_Page(driver, test);
+		switchToLastWindow("ESPN: The Worldwide Leader in Sports");
+		return new Home_Page_and_Login_Page(driver, test);
 	}
 	
 

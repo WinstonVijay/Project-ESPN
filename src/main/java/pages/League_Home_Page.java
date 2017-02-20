@@ -1,5 +1,7 @@
 package pages;
 
+//Page-Created by Vigneswaran P
+
 import java.util.concurrent.TimeUnit;
 
 //Page-Created by Prabhu
@@ -16,7 +18,7 @@ public class League_Home_Page extends ESPNWrappers {
 	{
 		this.driver=driver;
 		this.test=test;
-		Thread.sleep(2500);
+		Thread.sleep(5000);
 		if(!verifyTitle("English Premier League News, Stats, Scores - ESPN"))
 		{
 			reportStep("This is not league home page", "FAIL");

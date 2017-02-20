@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="TestCOMPLETE1to51">
+  		<groups>
+			<run>
+				<exclude name="ONHOLD" />
+			</run>
+		</groups>
+    <classes>
+      <class name="testcases.TC_001_LaunchFootball_Leagues_Competitions"/>
+      <class name="testcases.TC_002_LoginValidCredentials"/>
+      <class name="testcases.TC_003_LoginInvalidCredentials"/>
+      <class name="testcases.TC_004_LaunchSignUpCreateAccountPage"/>
+      <class name="testcases.TC_005_LoginWithValidCredsFacebookAccount"/>
+      <class name="testcases.TC_006_LoginWithInvalidCredsFacebookAccount"/>
+      <class name="testcases.TC_007_SignUpWithValidCredsFacebookAccount"/>
+      <class name="testcases.TC_008_SignUpWithInvalidCredsFacebookAccount"/>
+      <class name="testcases.TC_009_EmailSignupValid"/>
+      <class name="testcases.TC_010_EmailSignupInvalid"/>
+      <class name="testcases.TC_011_ClickEPL"/>
+      <class name="testcases.TC_012_EPLVerificationTopCorner"/>
+      <class name="testcases.TC_013_ClickTableLink"/>
+      <class name="testcases.TC_014_League_Name_Dropdown"/>
+      <class name="testcases.TC_015_Select_Year_Dropdown"/>
+      <class name="testcases.TC_016_Launch_Team_Home_Page"/>
+      <class name="testcases.TC_017_VerifyTeamAndRank"/>
+      <class name="testcases.TC_018_LastMatchDetails_Team1_Home_Page"/>
+      <class name="testcases.TC_019_NextMatchDetails_Team1_Home_Page"/>
+      <class name="testcases.TC_020_ClickSquadLink"/>
+      <class name="testcases.TC_021_Title_CaptionsVerification"/>
+      <class name="testcases.TC_022_DateVerification_LastMatchandNextmatch"/>
+      <class name="testcases.TC_023_TimezoneVerification_LastMatchandNextmatch"/>
+      <class name="testcases.TC_024_TeamVerification_LastMatchandNextmatch"/>
+      <class name="testcases.TC_025_TeamDetailsVerification_LastMatch"/>
+      <class name="testcases.TC_026_AddFav_LogIn_Email"/>
+      <class name="testcases.TC_027_AddFav_LogIn_FB"/>
+      <class name="testcases.TC_028_AddFav_SignUp_Email"/>
+      <class name="testcases.TC_029_AddFav_SignUp_FB"/>
+      <class name="testcases.TC_030_AddFav_LogIn_Email_When_Prompted"/>
+      <class name="testcases.TC_031_AddFav_LogIn_FB_When_Prompted"/>
+      <class name="testcases.TC_032_AddFav_SignUp_Email_When_Prompted"/>
+      <class name="testcases.TC_033_AddFav_SignUp_FB_When_Prompted"/>
+      <class name="testcases.TC_034_Tweet_Share"/>
+      <class name="testcases.TC_035_Facebook_Share"/>
+      <class name="testcases.TC_036_TeamDetails_ReportPage"/>
+      <class name="testcases.TC_037_LaunchLastMatch_SummaryPage"/>
+      <class name="testcases.TC_038_Count_Main_SubstitutePlayers"/>
+      <class name="testcases.TC_039_Launch_PlayerHomePage"/>
+      <class name="testcases.TC_040_AddingPercentage_Teams"/>
+      <class name="testcases.TC_041_VerifyPlayerDetails_NextMatch_Summary_Page"/>
+      <class name="testcases.TC_042_Verify_TopScorers"/>
+      <class name="testcases.TC_043_VerifyGoals_ConcededGoals_NextMatch_Summary_Page"/>
+      <class name="testcases.TC_044_VerifyVenueTimeDate_NextMatch_Summary_Page"/>
+      <class name="testcases.TC_045_Player_Home_Page_by_Searching_from_HomePage"/>
+      <class name="testcases.TC_046_Verify_Player_Info_Details"/>
+      <class name="testcases.TC_047_Launch_Fixtures_and_Results"/>
+      <class name="testcases.TC_048_NavigateToReportPage"/>
+      <class name="testcases.TC_049_VerifyLeicesterCityLastMatchStatus"/>
+      <class name="testcases.TC_050_Verifying_Ads_on_HomePage"/>
+      <class name="testcases.TC_051_Verifying_Score_Players_Details"/>
+    </classes>
+  </test> <!-- TestCOMPLETE1to51 -->
+</suite> <!-- Suite -->

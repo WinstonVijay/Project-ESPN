@@ -1,6 +1,13 @@
 package pages;
 
+//Page-Created by Prabhu
+
+import java.util.List;
+
+//Page-Created by Prabhu
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 //Page-Created by Prabhu
 
@@ -19,22 +26,16 @@ public class Home_Page_and_Login_Page extends ESPNWrappers{
 	{
 		this.driver=driver;
 		this.test=test;
-		if(!verifyTitle("ESPN: The Worldwide Leader in Sports")){
+		if(!verifyTitle("ESPN: The Worldwide Leader in Sports"))
+		{
 			reportStep("This is not Home Page", "FAIL");
 		}
 	}
-	
-	//substring TRY
-	public Home_Page_and_Login_Page subStringTRY()
-	{
-		subStringBegIndexXpath("//h2[@class='quicklinks__heading']", 2);
-		return this;
-	}
 
-	//Mouse hover into the football 
+
+	//Mouse hover into the football
 	public Home_Page_and_Login_Page mouseHoverFootball()
 	{
-		//clickByXpath("//div[@class='container']/h1");
 		mouseOverByXpath("//li[@class='sports menu-soccer']");
 		return this;
 	}
@@ -42,7 +43,7 @@ public class Home_Page_and_Login_Page extends ESPNWrappers{
 	//click the leagues and cups link under football 
 	public Football_Leagues_And_Competitions_Page clickleaguesandcups() throws InterruptedException
 	{
-		clickByPartialLink("Leagues");
+		clickByLink("Leagues & Cups");
 		return new Football_Leagues_And_Competitions_Page(driver,test);
 	}
 
@@ -50,6 +51,7 @@ public class Home_Page_and_Login_Page extends ESPNWrappers{
 	public Home_Page_and_Login_Page loginlink()
 	{
 		clickByXpath("//li[@class='user']/a");
+		switchToFrame("disneyid-iframe");
 		return this;
 	}
 
@@ -70,18 +72,34 @@ public class Home_Page_and_Login_Page extends ESPNWrappers{
 	//Click the login button in ESPN account
 	public Home_Page_and_Login_Page espn_LoginButton()
 	{
-		clickByXpath("//div[@class='btn-group']/button");
+		clickByXpath("//div[@class='btn-group touch-print-btn-group-wrapper']/button[2]");
+		switchToDefaultcontent();
 		return this;
 	}
-	
+
+	//To check whether the error message pops up while logged in, if so PASS
+	public Home_Page_and_Login_Page errorMessagePass()
+	{
+		errorMessagePASS();
+		return this;
+	}
+
+	//To check whether the error message pops up while logged in, if so FAIL
+	public Home_Page_and_Login_Page errorMessageFail()
+	{
+		errorMessageFAIL();
+		return this;
+	}
+
 	//click login with facebook button 
 	public Facebook_Login_SignUp_Page espn_LogInWithFacebook() throws InterruptedException
 	{
 		clickByLink("Log In with Facebook");
+		switchToLastWindow("Facebook");
 		return new Facebook_Login_SignUp_Page(driver, test);
 	}
 
-	//Click the Sign up button in ESPN account :Pass
+	//Click the Sign up button in ESPN account
 	public Home_Page_and_Login_Page espn_SignUpButton()
 	{
 		clickByXpath("//div[@class='btn-group btn-group-create-account ng-scope']/a");
@@ -95,39 +113,39 @@ public class Home_Page_and_Login_Page extends ESPNWrappers{
 		return this;
 	}
 
-
 	//Click the "Sign up with face book" button in create account 
-	public Home_Page_and_Login_Page signUpWithFacebook()
+	public Facebook_Login_SignUp_Page signUpWithFacebook() throws InterruptedException
 	{
 		clickByXpath("//div[@class='btn-group']/a[2]");
-		return this;
+		switchToLastWindow("Facebook");
+		return new Facebook_Login_SignUp_Page(driver, test);
 	}
 
 	//Pass the first name in create account  
-	public Home_Page_and_Login_Page signup_FirstName()
+	public Home_Page_and_Login_Page signup_FirstName(String data)
 	{
-		clickByXpath("//form[@name='vm.create']/section[1]/div[1]/div[1]/label/span[2]/input");
+		enterByXpath("//form[@name='vm.create']/section[1]/div[1]/div[1]/label/span[2]/input", data);
 		return this;
 	}
 
 	//Pass the last name in create account 
-	public Home_Page_and_Login_Page signUp_LastName()
+	public Home_Page_and_Login_Page signUp_LastName(String data)
 	{
-		clickByXpath("//form[@name='vm.create']/section[1]/div[1]/div[2]/label/span[2]/input");
+		enterByXpath("//form[@name='vm.create']/section[1]/div[1]/div[2]/label/span[2]/input", data);
 		return this;
 	}
 
 	//Pass the email address in create account 
-	public Home_Page_and_Login_Page signUp_EmailAddress()
+	public Home_Page_and_Login_Page signUp_EmailAddress(String data)
 	{
-		clickByXpath("//form[@name='vm.create']/section[1]/div[2]/div[1]/label/span[2]/input");
+		enterByXpath("//form[@name='vm.create']/section[1]/div[2]/div[1]/label/span[2]/input", data);
 		return this;
 	}
 
 	//Pass the password in create account 
-	public Home_Page_and_Login_Page signUp_Password()
+	public Home_Page_and_Login_Page signUp_Password(String data)
 	{
-		clickByXpath("//form[@name='vm.create']/section[1]/div[3]/div[1]/label/span[2]/input");
+		enterByXpath("//form[@name='vm.create']/section[1]/div[3]/div[1]/label/span[2]/input", data);
 		return this;
 	}
 
@@ -139,9 +157,9 @@ public class Home_Page_and_Login_Page extends ESPNWrappers{
 	}
 
 	//Pass the "DOB" in this (dd/mm/yyyy) format
-	public Home_Page_and_Login_Page signUp_DOB()
+	public Home_Page_and_Login_Page signUp_DOB(String data)
 	{
-		clickByXpath("//form[@name='vm.create']/section[2]/div[2]/div/span[2]/label/input[1]");
+		enterByXpath("//form[@name='vm.create']/section[2]/div[2]/div/span[2]/label/input[1]", data);
 		return this;
 	}
 
@@ -149,6 +167,7 @@ public class Home_Page_and_Login_Page extends ESPNWrappers{
 	public Home_Page_and_Login_Page signUp_SignUpButton()
 	{
 		clickByXpath("//form[@name='vm.create']/section[4]/div/button");
+		switchToDefaultcontent();
 		return this;
 	}
 
@@ -162,22 +181,31 @@ public class Home_Page_and_Login_Page extends ESPNWrappers{
 	//Passing input as default value "Chelsea" into the search field
 	public Home_Page_and_Login_Page PassInput_Search(String data)
 	{
-		enterByClass("btn-search", data);
-		return this;
-	}
-
-	//click the search button after passed a input
-	public Home_Page_and_Login_Page clickInputSearch(String data)
-	{
 		enterByClass("search-box", data);
 		return this;
 	}
 
-	//select the first search-result
-	public Team1_Home_Page selectFirstSearchResult() throws InterruptedException
+	//gettext of first search result
+	public Home_Page_and_Login_Page gettextFirstSearchResult(int i)
 	{
+		fetchInput("//div[@class='search-results']/ul/li[1]/a", i);
+		return this;
+	}
+
+	//select the first search-result to select a team
+	public Team1_Home_Page selectFirstSearchResultTeam() throws InterruptedException
+	{
+		Thread.sleep(1500);
 		clickByXpath("//div[@class='search-results']/ul/li[1]/a");
 		return new Team1_Home_Page(driver,test);
+	}
+
+	//select the first search-result to select a player
+	public Player_Home_Page selectFirstSearchResultPlayer() throws InterruptedException
+	{
+		Thread.sleep(1500);
+		clickByXpath("//div[@class='search-results']/ul/li[1]/a");
+		return new Player_Home_Page(driver,test);
 	}
 
 	//mouse hover the account in home page
@@ -188,12 +216,16 @@ public class Home_Page_and_Login_Page extends ESPNWrappers{
 	}
 
 	//get the favourite-team from my account
-	public Home_Page_and_Login_Page favouriteTeam_MyAccount()
+	public Home_Page_and_Login_Page favouriteTeam_MyAccount(int j)
 	{
-		getTextByXpath("//ul[@class='current-favorites-container']/li/a/div[2]");
+		verifyInput("//ul[@class='current-favorites-container']/li/a/div[2]", j);
 		return this;
 	}
-	
 
-
+	//verifying Ads on the Home page
+	public Home_Page_and_Login_Page verifyingAds()
+	{
+		verifyAdsOnHomePage();
+		return this;
+	}
 }

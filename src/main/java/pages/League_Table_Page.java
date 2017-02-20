@@ -29,39 +29,41 @@ public class League_Table_Page extends ESPNWrappers{
 	}
 
 	//Mouser hover the league-Year drop down
-	public League_Table_Page mousehover_yeardropdown()
+	public League_Table_Page mouseHover_YearDropdown()
 	{
 		mouseOverByXpath("//div[@class='filters']/div[2]/button");
 		return this;
 	}
 
 	//select & change the year as "2015-2016" in the league year drop-down
-	public League_Table_Page changeyear_yeardropdown()
+	public League_Table_Page changeYear_YearDropdown()
 	{
 		clickByLink("2015-16");
 		return this;
 	}
 
 	//Launch the top team in the table displayed
-	public Team1_Home_Page clickTeam() throws InterruptedException
+	public Team1_Home_Page selectTeam() throws InterruptedException
 	{
-		clickByXpath("//table[@class='standings has-team-logos']/tbody/tr[1]/td[1]/a[2]/span/span");
+		Thread.sleep(2000);
+		clickByXpath("//thead[@class='standings-categories']/following-sibling::tbody/tr/td//a[2]");
 		return new Team1_Home_Page(driver, test);
 	}
 
 	//get text of first team in the displayed table
-	public League_Table_Page firstteam_gettext(String xPathVal, int i)
+	public League_Table_Page firstteam_gettext(int i)
 	{
-		fetchInput(xPathVal, i);
+		fetchInput("//table[@class='standings has-team-logos']/tbody/tr[1]/td[1]/a[2]/span/span", i);
 		//getTextByXpath("//table[@class='standings has-team-logos']/tbody/tr[1]/td[1]/a[2]/span/span");
 		return this;
 	}
 
 	//get the position of the target team-Leicester City in the current year of 2016-2017
-	public League_Table_Page getposition_LeicesterCity()
-	{
-		//getTextByXpath("//tbody/tr[15]/td[1]/span");
-		return this;
-	}
+    public League_Table_Page getposition_LeicesterCity(int i)
+    {
+          fetchInput("//span[contains(text(),'Leicester City')]/../../../span", i);
+          return this;
+    }
+
 
 }

@@ -36,7 +36,7 @@ public class ESPNWrappers extends GenericWrappers {
 	@AfterMethod
 	public void afterMethod(){
 		endTestcase();
-		//quitBrowser();
+		quitBrowser();
 	}
 
 	@DataProvider(name="fetchData")
